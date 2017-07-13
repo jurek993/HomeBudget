@@ -1,7 +1,241 @@
-﻿
+﻿@model HomeBudget.Models.ContainterViewModels
 @{
     ViewBag.Title = "Domowy Budżet";
 }
 
-<h2>Index</h2>
+@section Scripts
+{
+
+<script src="~/scripts/jquery-3.1.1.js"></script>
+<script src="~/scripts/jquery-3.1.1.min.js"></script>
+<script src="@Url.Content("~/scripts/HomePage.js")"></script>
+<script src="@Url.Content("~/scripts/LoginScript.js")"></script>
+<link rel="stylesheet" href="~/Content/HomePage.css" />
+<link rel="stylesheet" href="~/Content/LoginStyle.css" />
+}
+
+    <div class="row">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="~/Images/21.jpg">
+                        <div class="carousel-caption">
+                            <h1>
+                                Używaj Naszej aplikacji na każdym urządzeniu
+                            </h1> @*you can make paragraph*@ 
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <img src="~/Images/3.jpg">
+                        <div class="carousel-caption">
+                            <h1>
+                               Prowadz rozmaite statystyki
+                            </h1>
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <img src="~/Images/e78e9e35180065.56ec5c700da44.jpg">
+                        <div class="carousel-caption">
+                            <h1>
+                                Zarządzaj Budżetem wspólnie z rodziną
+                            </h1>
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <img src="~/Images/Prerequisite.png">
+                        <div class="carousel-caption">
+                            <h1>
+                                Szybka i wygodna lista zakupów 
+                            </h1> 
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                </div>
+                <!-- End Carousel Inner -->
+                <ul class="nav nav-pills nav-justified">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active">
+                        <a href="#">
+                            Uniwersalność<small>
+                                Zawsze i wrzędzie
+                            </small>
+                        </a>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="1">
+                        <a href="#">
+                            Statystyki<small>
+                                Kontroluj swoje wydatki
+                            </small>
+                        </a>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="2">
+                        <a href="#">
+                            Wspódzielenie<small>
+                                Idealne dla rodziny
+                            </small>
+                        </a>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="3">
+                        <a href="#">
+                            Zakupy<small>
+                                Wygodna lista zakupów
+                            </small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Carousel -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Witaj na naszej stronie!</h1>
+            <p>Aby w pełni móc z niej korzystać zarejestruj się, bądź zaloguj! :)</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#login-modal">Zaloguj</a></p>
+        </div>
+    </div>
+    <div class="page-header">
+        <h1>O co tu chodzi</h1>
+    </div>
+    <div class="container">
+        <div class="row pricing">
+            <div class="col-md-6">
+                <div class="well">
+                    <h3><b>Chcesz zadbać o domowy budżet?</b></h3>
+                    <hr>
+                    <p><b>Kontroluj swoje wydatki.</b></p>
+                    <hr>
+                    <p><b>Analizuj piękne wykresy.</b></p>
+                    <hr>
+                    <p><b>Połącz swoje konto ze swoją rodziną.</b></p>
+                    <hr>
+                    <p><b>Trzymaj wsyzstkie swoje dane w jednym miejscu.</b></p>
+                    <hr>
+                    <p><b>Wspólnie zadbajcie o to żeby wydatki nie były zbyt duże!</b></p>
+                    <hr>
+                    <a href="#" class="btn btn-default btn-block" data-toggle="modal" data-target="#login-modal">Zainteresowany? Dołącz do nas!</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="well">
+                    <h3><b>Szuksz czegoś do robienia listy zakupów?</b></h3>
+                    <hr>
+                    <p><b>Nie męcz się już z wysyłaniem składników przez sms lub facebooka.</b></p>
+                    <hr>
+                    <p><b>Kartki również są słabe. Ile razy udało Ci się ją zgubić?</b></p>
+                    <hr>
+                    <p><b>U nas można wygodnie dodawać listę zakupów dla całej rodziny.</b></p>
+                    <hr>
+                    <p><b>Każdy ją zobaczy i nie będzie już wymówek, że karteczka się zgubiła!.</b></p>
+                    <hr>
+                    <p><b>Wydatki i plany zakupowe w jednym miejscu.</b></p>
+                    <hr>
+                    <a href="#" class="btn btn-default btn-block" data-toggle="modal" data-target="#login-modal">Teraz to nie ma wyjścia. Zapraszamy!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN # MODAL LOGIN -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <img class="img-circle" id="img_logo" src="~/Images/icon.png">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+
+                    <!-- Begin # Login Form -->
+                    @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { id = "login-form" }))
+                    {
+                        <div class="modal-body">
+                            <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Podaj swoją nazwę użytkownika i hasło.</span>
+                            </div>
+                            @Html.TextBoxFor(m => m.LoginModel.Email,
+                         new { @class = "form-control", required = "required", Type = "Email", id = "login_username", placeholder = "Email" })
+                            @Html.TextBoxFor(m => m.LoginModel.Password,
+                         new { @class = "form-control", required = "required", Type = "password", id = "login_password", placeholder = "Hasło" })
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Zapamiętaj mnie
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Zaloguj się</button>
+                            </div>
+                            <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Zapomiałeś hasła?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Zarejestruj</button>
+                            </div>
+                        </div>
+                    }
+                    <!-- End # Login Form -->
+                    <!-- Begin | Lost Password Form -->
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "lost-form", style = "display:none;" }))
+{
+                        <div class="modal-body">
+                            <div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Podaj swój adres Email</span>
+                            </div>
+                            <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Zarejestuj się</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Logowanie</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Rejestracja</button>
+                            </div>
+                        </div>
+}
+                    <!-- End | Lost Password Form -->
+                    <!-- Begin | Register Form -->
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "register-form", style = "display:none;" }))
+{
+                        <div class="modal-body">
+                            <div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Dołącz do nas.</span>
+                            </div>
+                            @Html.TextBoxFor(m => m.RegisterModel.Email,
+     new { @class = "form-control", required = "required", Type = "Email", id = "register_email", placeholder = "E-Mail" })
+                            @Html.TextBoxFor(m => m.RegisterModel.Password,
+     new { @class = "form-control", required = "required", Type = "password", id = "register_password", placeholder = "Hasło" })
+                            @Html.TextBoxFor(m => m.RegisterModel.ConfirmPassword,
+     new { @class = "form-control", required = "required", Type = "password", id = "register_password", placeholder = "Powtórz hasło" })
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Zarejestruj</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Zaloguj</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Zapomniałeś hasła?</button>
+                            </div>
+                        </div>
+                    <!-- End | Register Form -->
+}
+                </div>
+                <!-- End # DIV Form -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END # MODAL LOGIN -->
+
 

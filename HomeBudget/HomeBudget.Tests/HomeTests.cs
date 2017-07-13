@@ -1,14 +1,14 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace HomeBudget.Tests
 {
-    [TestClass]
     public class HomeTests
     {
         [Fact]
         public void TestMethod1()
         {
+
         }
     }
 }
